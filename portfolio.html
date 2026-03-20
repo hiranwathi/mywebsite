@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BSc Data Science | Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050507;
+      --card-bg: rgba(22, 22, 26, 0.7);
+      --accent: #6366f1;
+      --accent-glow: rgba(99, 102, 241, 0.15);
+      --text-dim: #94a3b8;
+      --text-bright: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-bright);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Animated Mesh Background */
+    .mesh-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: 
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(34, 211, 238, 0.1) 0, transparent 50%);
+      z-index: -1;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 12vw, 6rem);
+      font-weight: 800;
+      margin: 0;
+      letter-spacing: -3px;
+      background: linear-gradient(180deg, #fff 30%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 0.9;
+    }
+
+    .hero p {
+      color: var(--accent);
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: 20px;
+      opacity: 0.8;
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding-bottom: 100px;
+    }
+
+    section {
+      min-height: 30vh;
+      display: flex;
+      justify-content: center;
+      margin: 40px 0;
+    }
+
+    /* Advanced Glass Card */
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 40px;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      width: 100%;
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      
+      /* Smooth Reveal Animation */
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      border-color: rgba(99, 102, 241, 0.5);
+      background: rgba(22, 22, 26, 0.9);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .code-pill {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #fff;
+      background: var(--accent);
+      padding: 2px 10px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      margin: 0 0 15px 0;
+      font-weight: 600;
+      color: var(--text-bright);
+      letter-spacing: -0.5px;
+    }
+
+    .faculty-box {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      border-left: 2px solid var(--accent);
+      padding-left: 15px;
+      margin-top: 20px;
+    }
+
+    .faculty-box span {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      color: var(--accent);
+    }
+
+    /* Floating Navigation (Small Stylish addition) */
+    .nav-hint {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translate(-50%, 0);}
+      40% {transform: translate(-50%, -5px);}
+    }
+  </style>
+</head>
+<body>
+
+<div class="mesh-bg"></div>
+
+<div class="hero">
+  <h1>Data Science</h1>
+  <p>Core Curriculum 2026</p>
+</div>
+
+<div class="container">
+  <section>
+    <div class="card">
+      <div class="code-pill">25GEN3T321</div>
+      <h3>Language in Practice: Texts and Transformations</h3>
+      <div class="faculty-box">
+        <span>Assigned Faculty</span>
+        Prof. Gowrikrishna S Kumar
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <div class="code-pill">25BCA1T321</div>
+      <h3>Data Structures & Algorithms</h3>
+      <div class="faculty-box">
+        <span>Assigned Faculty</span>
+        Ritika M Vyas Ms.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <div class="code-pill">25BDM1T321</div>
+      <h3>Operating System and Networks</h3>
+      <div class="faculty-box">
+        <span>Assigned Faculty</span>
+        Sevuga Pandian Asirvatham
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <div class="code-pill">Practical</div>
+      <h3>Basic Statistical Analysis Lab</h3>
+      <div class="faculty-box">
+        <span>Assigned Faculty</span>
+        Srishti Kumari, Prof. Keerthi Vijayan
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <div class="code-pill">25BDS1T321</div>
+      <h3>Basic Statistical Analysis</h3>
+      <div class="faculty-box">
+        <span>Assigned Faculty</span>
+        Prof. Raichel M
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="nav-hint">Scroll to explore</div>
+
+<script>
+  // Modern Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Add a slight delay based on card position for staggered effect
+        setTimeout(() => {
+          entry.target.classList.add('show');
+        }, index * 50); 
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.card').forEach(card => {
+    observer.observe(card);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #fafafa; /* Clean gallery background */
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 20px 20px; /* Subtle grid pattern often seen in portfolios */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1a1a1a;
+}
+
+/* MAIN BOX */
+.container {
+  width: 100%;
+  max-width: 380px;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 24px;
+  /* Soft, multi-layered shadow for a premium 'floating' look */
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Alignment changed to left for a more modern feel */
+  border: 1px solid #eaeaea;
+  transition: transform 0.3s ease;
+}
+
+/* TITLE */
+h2 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+/* SUBTEXT (Optional addition) */
+.container p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  padding: 14px 16px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 1.5px solid #e5e7eb;
+  background: #ffffff;
+  outline: none;
+  font-size: 14px;
+  color: #1a1a1a;
+  transition: all 0.2s ease;
+}
+
+input:focus {
+  border-color: #1a1a1a; /* Dark focus border is very 'portfolio-chic' */
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  background: #1a1a1a; /* Solid black button for high contrast */
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* HOVER */
+button:hover {
+  background: #333333;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  transform: translateY(0);
+}
