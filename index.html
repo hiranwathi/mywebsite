@@ -1,26 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login Page</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Access | Hiranwathi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-  <h2>Login</h2>
+    <div class="bg-glow"></div>
 
-  <input type="text" id="username" placeholder="Username">
-  <input type="password" id="password" placeholder="Password">
+    <div class="login-container">
+        <header class="login-header">
+            <h2>Enter Portal</h2>
+            <p class="subtitle">Securely access your dashboard</p>
+        </header>
 
-  <button onclick="login()">Login</button>
+        <div class="form-content">
+            <div class="input-wrapper">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" autocomplete="off">
+            </div>
 
-  <div id="signupSection">
-    <h3>Signup</h3>
-    <button onclick="signup()">Signup</button>
-  </div>
+            <div class="input-wrapper">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="••••••••">
+            </div>
 
-</div>
+            <button class="access-btn" onclick="login()">
+                <span>Access Account</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+        </div>
 
-<script src="script.js"></script>
+        <footer class="footer-section">
+            <span>New member?</span>
+            <a href="#" class="signup-link" onclick="signup()">Register here</a>
+        </footer>
+    </div>
+
+    <script src="script.js" type="module"></script>
 </body>
 </html>

@@ -1,37 +1,35 @@
-async function signup() {
+import { EnvironmentVariables } from "./environment_variables.js";
+
+window.signup = async function signup() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-  const res = await fetch("http://localhost:3000/signup", {
+  await fetch(EnvironmentVariables.SERVER.SIGNUP_URL, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, password })
-  });
+  })
+    .then(res => console.log(res));
 
-  const data = await res.text();
-  alert(data);
-
+  // clear fields
   document.getElementById("username").value = "";
   document.getElementById("password").value = "";
-
-  document.getElementById("signupSection").style.display = "none";
 }
 
-async function login() {
+window.login = async function login() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-  const res = await fetch("http://localhost:3000/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ username, password })
-  });
+  let response;
 
-  const data = await res.json();
+  await fetch(EnvironmentVariables.SERVER.LOGIN_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, password })
+  })
+    .then(res => response = res);
+
+  const data = await response.json();
 
   if (data.message === "Login successful") {
     window.location.href = "portfolio.html";

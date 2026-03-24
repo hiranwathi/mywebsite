@@ -1,91 +1,147 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&family=Space+Grotesk:wght@700&display=swap');
+
+:root {
+  --accent: #00f2ff;
+  --bg: #0a0a0a;
+  --card: #111111;
+  --text: #ffffff;
+  --text-dim: #666666;
+  --border-width: 2px;
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  padding: 20px;
-  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  background-color: #fafafa; /* Clean gallery background */
-  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-  background-size: 20px 20px; /* Subtle grid pattern often seen in portfolios */
+  padding: 0;
+}
+
+body {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #1a1a1a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg);
+  /* Dot grid background pattern */
+  background-image: radial-gradient(#222 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--text);
 }
 
-/* MAIN BOX */
-.container {
-  width: 100%;
-  max-width: 380px;
+.login-container {
+  width: 380px;
   padding: 40px;
-  background: #ffffff;
-  border-radius: 24px;
-  /* Soft, multi-layered shadow for a premium 'floating' look */
-  box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.05), 
-    0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  text-align: left; /* Alignment changed to left for a more modern feel */
-  border: 1px solid #eaeaea;
-  transition: transform 0.3s ease;
+  background: var(--card);
+  /* Brutalist hard shadow */
+  border: var(--border-width) solid #222;
+  box-shadow: 10px 10px 0px var(--accent);
+  transition: all 0.2s ease;
 }
 
-/* TITLE */
-h2 {
+.login-container:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 14px 14px 0px var(--accent);
+}
+
+.brand-mark {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: #111827;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 30px;
+  display: inline-block;
+  border-bottom: 3px solid var(--accent);
+}
+
+h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
   margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
 }
 
-/* SUBTEXT (Optional addition) */
-.container p {
-  font-size: 14px;
-  color: #6b7280;
-  margin-bottom: 24px;
+.subtitle {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* INPUT */
+/* BOX-STYLE INPUTS */
+.input-wrapper {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+  display: block;
+}
+
 input {
   width: 100%;
-  padding: 14px 16px;
-  margin: 8px 0;
-  border-radius: 10px;
-  border: 1.5px solid #e5e7eb;
-  background: #ffffff;
-  outline: none;
+  padding: 14px;
+  background: #000;
+  border: var(--border-width) solid #222;
+  color: #fff;
   font-size: 14px;
-  color: #1a1a1a;
+  outline: none;
   transition: all 0.2s ease;
 }
 
 input:focus {
-  border-color: #1a1a1a; /* Dark focus border is very 'portfolio-chic' */
-  background: #fff;
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+  border-color: var(--accent);
+  /* Inward glow/shadow */
+  box-shadow: inset 0 0 8px rgba(0, 242, 255, 0.2);
 }
 
-/* BUTTON */
-button {
+/* ACTION BUTTON */
+.access-btn {
   width: 100%;
-  padding: 14px;
-  margin-top: 20px;
-  background: #1a1a1a; /* Solid black button for high contrast */
-  border: none;
-  color: white;
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 10px;
+  padding: 16px;
+  margin-top: 10px;
+  background: var(--accent);
+  color: #000;
+  border: var(--border-width) solid #000;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  box-shadow: 4px 4px 0px #000;
+  transition: all 0.1s ease;
 }
 
-/* HOVER */
-button:hover {
-  background: #333333;
-  transform: translateY(-1px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+.access-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0px #000;
 }
 
-button:active {
-  transform: translateY(0);
+.access-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #000;
+}
+
+.footer-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px dashed #222;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.signup-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+}
+
+.signup-link:hover {
+  border-bottom: 1px solid var(--accent);
 }
