@@ -3,261 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hiranwathi KV | Academic Portal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <title>Hiranwathi KV | Academic Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --accent: #d4ff00; /* Neon Lime */
-            --bg: #050505;
-            --card-bg: rgba(255, 255, 255, 0.03);
+            --accent: #e3a61d; 
+            --accent-bright: #ffcc5c;
+            --bg: #030712;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-hover: rgba(255, 255, 255, 0.08);
             --border: rgba(255, 255, 255, 0.1);
-            --text-muted: #888;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
 
-        body {
-            background: var(--bg);
-            color: white;
-            font-family: 'Outfit', sans-serif;
+        body { 
+            background: var(--bg); 
+            color: white; 
+            font-family: 'Outfit', sans-serif; 
             line-height: 1.6;
-            padding: 40px 8%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            
+            /* ULTRA-VIBRANT MESH BACKGROUND */
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.4) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(219, 39, 119, 0.35) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(227, 166, 29, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(37, 99, 235, 0.35) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.3) 0px, transparent 50%);
+            background-attachment: fixed;
+            background-size: 140% 140%;
+            animation: auroraMove 12s ease-in-out infinite alternate;
         }
 
-        /* HEADER SECTION */
-        header {
-            margin-bottom: 60px;
-            border-left: 4px solid var(--accent);
-            padding-left: 25px;
-            animation: slideIn 0.8s ease forwards;
+        @keyframes auroraMove {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
         }
 
-        .label {
-            color: var(--accent);
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 10; }
+
+        /* HERO SECTION */
+        .hero { text-align: center; padding: 120px 0 60px; }
+        .hero p { 
+            color: var(--accent); 
+            letter-spacing: 8px; 
+            text-transform: uppercase; 
+            font-weight: 700; 
+            font-size: 12px; 
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px rgba(227, 166, 29, 0.4);
+        }
+        .hero h1 { 
+            font-family: 'Space Grotesk', sans-serif; 
+            font-size: clamp(45px, 10vw, 95px); 
+            line-height: 0.8; 
             text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 5px;
-            display: block;
+            background: linear-gradient(135deg, #ffffff 20%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -3px;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
         }
 
-        h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(32px, 5vw, 60px);
-            line-height: 1;
-            text-transform: uppercase;
-        }
-
-        .subtitle {
-            color: var(--text-muted);
-            font-size: 18px;
-            font-weight: 300;
-        }
-
-        /* COURSE GRID */
-        .course-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 20px;
-            animation: slideIn 1.2s ease forwards;
-        }
-
-        .course-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 20px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            backdrop-filter: blur(10px);
-        }
-
-        .course-card:hover {
-            border-color: var(--accent);
-            background: rgba(212, 255, 0, 0.05);
-            transform: translateY(-5px);
-        }
-
-        .course-code {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 10px;
-            display: block;
-            opacity: 0.8;
-        }
-
-        .course-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-
-        .teacher-box {
-            border-top: 1px solid var(--border);
-            padding-top: 15px;
+        /* SECTION TITLES */
+        .section-title { 
+            font-size: 18px; 
+            margin: 80px 0 40px; 
+            font-family: 'Space Grotesk', sans-serif; 
+            text-transform: uppercase; 
+            letter-spacing: 5px; 
+            color: #fff;
             display: flex;
             align-items: center;
-            gap: 12px;
+        }
+        .section-title::before {
+            content: "";
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            margin-right: 15px;
+            box-shadow: 0 0 10px var(--accent);
         }
 
-        .teacher-icon {
-            width: 32px;
-            height: 32px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: var(--accent);
+        /* PRISMATIC FLOATING CARDS */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+
+        .card { 
+            background: var(--glass); 
+            backdrop-filter: blur(25px) saturate(210%);
+            -webkit-backdrop-filter: blur(25px) saturate(210%);
+            border: 1px solid var(--border); 
+            padding: 40px; 
+            border-radius: 32px; 
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative; 
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
 
-        .teacher-name {
-            font-size: 14px;
-            color: #ccc;
+        /* Inner light effect */
+        .card::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at top left, rgba(255,255,255,0.1), transparent 70%);
+            pointer-events: none;
         }
 
-        .teacher-name b {
-            display: block;
-            color: white;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .card:hover { 
+            transform: translateY(-15px) rotateX(4deg) rotateY(-2deg);
+            background: var(--glass-hover);
+            border-color: rgba(227, 166, 29, 0.6);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 0 0 20px rgba(227, 166, 29, 0.2);
         }
 
-        /* ANIMATIONS */
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .card .code { 
+            font-size: 10px; color: var(--accent); font-weight: 800; 
+            letter-spacing: 2px; text-transform: uppercase;
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 600px) {
-            body { padding: 30px 5%; }
-            .course-grid { grid-template-columns: 1fr; }
+        .card h3 { 
+            font-size: 24px; margin: 15px 0; color: #fff; 
+            line-height: 1.2; font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .card .professor { font-size: 13px; color: #94a3b8; margin-top: 20px; display: block; font-weight: 500; }
+
+        /* BADGE */
+        .badge { 
+            position: absolute; top: 25px; right: 25px; font-size: 9px; 
+            background: linear-gradient(135deg, rgba(227, 166, 29, 0.2), rgba(249, 115, 22, 0.2));
+            color: var(--accent-bright); padding: 6px 16px; 
+            border-radius: 30px; border: 1px solid rgba(227, 166, 29, 0.3); 
+            text-transform: uppercase; font-weight: 800; letter-spacing: 1px;
+        }
+
+        /* CONTACT BOX */
+        .contact-box { 
+            background: rgba(15, 23, 42, 0.5); 
+            backdrop-filter: blur(40px) saturate(150%);
+            border: 1px solid var(--border); 
+            border-radius: 40px; 
+            padding: 70px 50px; 
+            margin: 120px auto 40px; 
+            max-width: 650px; 
+            text-align: center;
+            box-shadow: 0 0 100px rgba(79, 70, 229, 0.1), 0 50px 100px rgba(0,0,0,0.5);
+        }
+
+        .contact-box h2 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; margin-bottom: 35px; letter-spacing: 3px; }
+
+        input, textarea { 
+            width: 100%; padding: 20px; margin-bottom: 20px; 
+            background: rgba(0, 0, 0, 0.3); 
+            border: 1px solid var(--border); 
+            border-radius: 18px; color: white; 
+            font-family: inherit; font-size: 15px; 
+            transition: 0.3s ease;
+        }
+
+        input:focus, textarea:focus { 
+            outline: none; border-color: var(--accent); 
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 20px rgba(227, 166, 29, 0.1);
+        }
+
+        .submit-btn { 
+            width: 100%; padding: 22px; 
+            background: linear-gradient(135deg, #e3a61d 0%, #f97316 100%); 
+            color: #000; border: none; 
+            border-radius: 18px; font-weight: 900; 
+            cursor: pointer; transition: 0.4s; 
+            text-transform: uppercase; letter-spacing: 3px; font-size: 14px;
+        }
+
+        .submit-btn:hover { 
+            filter: brightness(1.2);
+            transform: translateY(-5px) scale(1.02); 
+            box-shadow: 0 20px 40px rgba(227, 166, 29, 0.4); 
+        }
+
+        footer { text-align: center; padding: 100px 20px 60px; color: #4b5563; font-size: 11px; text-transform: uppercase; letter-spacing: 4px; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 55px; }
+            .contact-box { padding: 40px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <span class="label">Academic Profile</span>
-        <h1>HIRANWATHI KV</h1>
-        <p class="subtitle">Curriculum Overview & Faculty Details</p>
-    </header>
+    <div class="container">
+        <section class="hero">
+            <p>Scholastic Portfolio & Research</p>
+            <h1>HIRANWATHI KV</h1>
+        </section>
 
-    <div class="course-grid">
-        
-        <div class="course-card">
-            <div>
-                <span class="course-code">25GEN3T321</span>
-                <div class="course-title">Language in Practice: Texts and Transformations</div>
+        <h2 class="section-title">Core Disciplines</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="code">25BCA1T321</span>
+                <h3>Data Structures</h3>
+                <span class="professor">Lead: Ritika M Vyas Ms.</span>
             </div>
-            <div class="teacher-box">
-                <div class="teacher-icon">👤</div>
-                <div class="teacher-name">Teacher <b>Prof. Gowrikrishna S Kumar</b></div>
+            <div class="card">
+                <span class="code">25BDM1T321</span>
+                <h3>Operating System and Networks (AI & ML)</h3>
+                <span class="professor">Lead: Sevuga Pandian Asirvatham</span>
+            </div>
+            <div class="card">
+                <span class="code">25BDS1T321</span>
+                <h3>Basic Statistical Analysis</h3>
+                <span class="professor">Lead: Prof. Raichel M</span>
+            </div>
+            <div class="card">
+                <span class="code">25MAC2T302</span>
+                <h3>Personal Finance Management</h3>
+                <span class="professor">Lead: Prof. Gowrishankar Shankar</span>
             </div>
         </div>
 
-        <div class="course-card">
-            <div>
-                <span class="course-code">25HIN3T223</span>
-                <div class="course-title">Pravidhi Ratna</div>
+        <h2 class="section-title">Linguistics & Communication</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="code">25GEN3T321</span>
+                <h3>Language in Practice</h3>
+                <span class="professor">Lead: Prof. Gowrikrishna S Kumar</span>
             </div>
-            <div class="teacher-box">
-                <div class="teacher-icon">👤</div>
-                <div class="teacher-name">Teacher <b>Prof. ABDULRAJAKM</b></div>
+            <div class="card">
+                <span class="code">25AEN3T221</span>
+                <h3>Applied English Communication</h3>
+                <span class="professor">Lead: Prof. Briji Jose</span>
             </div>
-        </div>
-
-        <div class="course-card">
-            <div>
-                <span class="course-code">25MAC2T302</span>
-                <div class="course-title">Personal Finance Management (MDC)</div>
-            </div>
-            <div class="teacher-box">
-                <div class="teacher-icon">👤</div>
-                <div class="teacher-name">Teacher <b>Prof. Gowrishankar Shankar</b></div>
+            <div class="card">
+                <span class="code">25HIN3T223</span>
+                <h3>Pravidhi Ratna</h3>
+                <span class="professor">Lead: Prof. ABDULRAJAK M</span>
             </div>
         </div>
 
-        <div class="course-card">
-            <div>
-                <span class="course-code">25BCA1T321</span>
-                <div class="course-title">Data Structures</div>
+        <h2 class="section-title">Laboratories & Practicals</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="badge">Practical</span>
+                <h3>Data Structure Practical</h3>
+                <span class="professor">Lead: Prof. Achsah Susan & Ritika M Vyas</span>
             </div>
-            <div class="teacher-box">
-                <div class="teacher-icon">👤</div>
-                <div class="teacher-name">Teacher <b>Ritika M Vyas Ms.</b></div>
-            </div>
-        </div>
-
-        <div class="course-card">
-            <div>
-                <span class="course-code">PRACTICAL</span>
-                <div class="course-title">Basic Statistical Analysis Practical</div>
-            </div>
-            <div class="teacher-box">
-                <div class="teacher-icon">👤</div>
-                <div class="teacher-name">Teacher <b>Srishti Kumari, Prof. Keerthi Vijayan</b></div>
+            <div class="card">
+                <span class="badge">Practical</span>
+                <h3>Basic Statistical Analysis Practical</h3>
+                <span class="professor">Lead: Srishti Kumari & Prof. Keerthi Vijayan</span>
             </div>
         </div>
 
-        <div class="course-card">
-            <div>
-                <span class="course-code">25BDM1T321</span>
-                <div class="course-title">Operating System and Networks (AI & ML)</div>
-            </div>
-            <div class="teacher-box">
-                <div class="teacher-icon">👤</div>
-                <div class="teacher-name">Teacher <b>Sevuga Pandian Asirvatham</b></div>
-            </div>
+        <div class="contact-box">
+            <h2>ACADEMIC INQUIRY</h2>
+            <input type="text" id="contactName" placeholder="Full Name">
+            <input type="email" id="contactEmail" placeholder="Email Address / ID">
+            <textarea id="contactMessage" rows="4" placeholder="Message regarding research or collaborations..."></textarea>
+            <button class="submit-btn" onclick="sendInquiry()">Send Inquiry</button>
         </div>
 
-        <div class="course-card">
-            <div>
-                <span class="course-code">25BDS1T321</span>
-                <div class="course-title">Basic Statistical Analysis</div>
-            </div>
-            <div class="teacher-box">
-                <div class="teacher-icon">👤</div>
-                <div class="teacher-name">Teacher <b>Prof. Raichel M</b></div>
-            </div>
-        </div>
-
-        <div class="course-card">
-            <div>
-                <span class="course-code">25AEN3T221</span>
-                <div class="course-title">Applied English Communication</div>
-            </div>
-            <div class="teacher-box">
-                <div class="teacher-icon">👤</div>
-                <div class="teacher-name">Teacher <b>Prof. Briji Jose</b></div>
-            </div>
-        </div>
-
-        <div class="course-card">
-            <div>
-                <span class="course-code">PRACTICAL</span>
-                <div class="course-title">Data Structure Practical</div>
-            </div>
-            <div class="teacher-box">
-                <div class="teacher-icon">👤</div>
-                <div class="teacher-name">Teacher <b>Prof. Achsah Susan, Ritika M Vyas</b></div>
-            </div>
-        </div>
-
+        <footer>&copy; 2026 HIRANWATHI KV. ALL ACADEMIC RIGHTS RESERVED.</footer>
     </div>
 
+    <script>
+        async function sendInquiry() {
+            const name = document.getElementById("contactName").value;
+            const phone = document.getElementById("contactEmail").value;
+            const order = document.getElementById("contactMessage").value;
+            const btn = document.querySelector(".submit-btn");
+
+            if(!name || !phone || !order) {
+                alert("Please complete the inquiry details.");
+                return;
+            }
+
+            btn.innerText = "TRANSMITTING...";
+            
+            try {
+                const res = await fetch("http://localhost:5000/send-order", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, phone, order })
+                });
+
+                if(res.ok) {
+                    alert("Academic Inquiry Sent.");
+                    location.reload();
+                } else {
+                    alert("Error: System offline.");
+                }
+            } catch (err) {
+                alert("Network failure. Check server status.");
+            } finally {
+                btn.innerText = "SEND INQUIRY";
+            }
+        }
+    </script>
 </body>
 </html>
